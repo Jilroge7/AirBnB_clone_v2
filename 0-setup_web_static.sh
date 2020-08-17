@@ -9,7 +9,7 @@ sudo mkdir -p /data/web_static/releases/test
 sudo echo "Simple Content!" | sudo tee /data/web_static/releases/test/index.html
 CURR="/data/web_static/current"
 sudo rm -f $CURR
-sudo ln -s /data/web_static/releases/test /data/web_static/current
+sudo ln -sf /data/web_static/releases/test /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 FILE="/etc/nginx/sites-available"
 sudo sed -i "53a location /hbnb_static/ {\n\talias /data/web_static/current/;\n\tautoindex off;\n\t}" $FILE
