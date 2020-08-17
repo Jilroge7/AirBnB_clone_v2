@@ -12,5 +12,5 @@ sudo rm -f $CURR
 sudo ln -sf /data/web_static/releases/test /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 FILE="/etc/nginx/sites-available"
-sudo sed -i "53a location /hbnb_static/ {\n\talias /data/web_static/current/;\n\tautoindex off;\n\t}" $FILE
+sudo sed -i '53a location /hbnb_static/ {'\\n''\\t'alias /data/web_static/current/;'\\n''\\t'autoindex off;'\\n''\\t'}' $FILE
 sudo service nginx restart
