@@ -11,6 +11,6 @@ CURR="/data/web_static/current"
 sudo rm -f $CURR
 sudo ln -sf /data/web_static/releases/test /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
-FILE="/etc/nginx/sites-available"
+FILE="/etc/nginx/sites-available/default"
 sudo sed -i "53a location /hbnb_static/ {\n\talias /data/web_static/current/;\n\tautoindex off;\n\t}" $FILE
 sudo service nginx restart
