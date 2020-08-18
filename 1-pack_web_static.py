@@ -6,10 +6,10 @@ import time
 
 def do_pack():
     """function to generate the .tgz """
-    try:
-        local("mkdir -p versions")
-        created = (time.strftime("%Y%m%d%H%M%S"))
+    local("mkdir -p versions")
+    created = (time.strftime("%Y%m%d%H%M%S"))
+    if created.succeeded:
         return local("tar -cvzf versions/web_static_{} web_static"
                      .format(created))
-    except:
+    else:
         return None
