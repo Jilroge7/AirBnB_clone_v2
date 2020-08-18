@@ -8,8 +8,9 @@ def do_pack():
     """function to generate the .tgz """
     local("mkdir -p versions")
     created = (time.strftime("%Y%m%d%H%M%S"))
-    if created.succeeded:
-        return local("tar -cvzf versions/web_static_{} web_static"
-                     .format(created))
+    compressed = local("tar -cvzf versions/web_static_{}.tzg web_static"
+                       .format(created))
+    if compressed.succeeded:
+        return "versions/web_static_{}.tzg".format(created)
     else:
         return None
