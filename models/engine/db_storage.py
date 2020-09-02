@@ -48,7 +48,7 @@ class DBStorage:
             result.append(self.__session.query(Review).all())
 
         else:
-            result = self.__session.query(eval(cls)).all()
+            result = self.__session.query(cls).all()
         ret = {}
         for i in result:
             key = i.__class__.__name__ + '.' + i.id
@@ -81,4 +81,4 @@ class DBStorage:
 
     def close(self):
         """ close db storage """
-        Session.close()
+        self.__session.close()
