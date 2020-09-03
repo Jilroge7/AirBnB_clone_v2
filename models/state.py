@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 import os
 
+
 HBNB_TYPE_STORAGE = os.getenv('HBNB_TYPE_STORAGE')
 
 
