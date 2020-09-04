@@ -14,6 +14,7 @@ def state_list():
     states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
 
+
 @app.teardown_appcontext
 def tear_session(self):
     """ method to remove sqlalchemy session """
